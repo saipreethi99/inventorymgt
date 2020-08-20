@@ -18,6 +18,5 @@ name is <c:out value="${computer.name}"  />
 <br>
 disk size is <c:out value="${computer.diskSize}"  />
 <br>
-
 </body>
 </html>

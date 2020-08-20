@@ -6,21 +6,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>All Suppliers</title>
+<title>Phone Details</title>
 </head>
 <body>
 
-<h1>Listing all Suppliers</h1>
+<h1>Phone Details </h1>
 
-<c:forEach items="${suppliers}"  var="supplier">
-
-<c:out value="${supplier.id}"  />
-
-<c:out value="${supplier.name}"  />
-
-
+id is <c:out value="${phone.id}"  />
 <br>
-</c:forEach>
+name is <c:out value="${phone.name}"  />
+<br>
+storage size is <c:out value="${phone.storageSize}"  />
+<br>
 
 </body>
 </html>

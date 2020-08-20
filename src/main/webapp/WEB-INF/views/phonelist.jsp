@@ -6,17 +6,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>All Suppliers</title>
+<title>All Phones</title>
 </head>
 <body>
 
-<h1>Listing all Suppliers</h1>
+<h1>Listing all Phones</h1>
 
-<c:forEach items="${suppliers}"  var="supplier">
+<c:forEach items="${phones}"  var="phone">
 
-<c:out value="${supplier.id}"  />
+<c:out value="${phone.id}"  />
 
-<c:out value="${supplier.name}"  />
+<c:out value="${phone.name}"  />
+<c:out value="${phone.storageSize}"  />
 
 
 <br>

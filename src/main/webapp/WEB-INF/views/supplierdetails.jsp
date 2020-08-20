@@ -16,6 +16,5 @@ id is <c:out value="${supplier.id}"  />
 <br>
 name is <c:out value="${supplier.name}"  />
 <br>
-
 </body>
 </html>

@@ -12,5 +12,4 @@ public interface ISupplierDao {
 	Supplier findSupplierById(int id);
 
 	List<Supplier> displayAllSuppliers();
-
 }

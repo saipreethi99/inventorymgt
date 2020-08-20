@@ -18,28 +18,58 @@ public class SupplierController {
 	@Autowired
 	private ISupplierService supplierservice;
 
-	@PostConstruct
-	public void init() {
-		Supplier supplier1 = new Supplier("Preethi");
-		supplier1 = supplierservice.add(supplier1);
-		Supplier supplier2 = new Supplier("Sai");
-		supplier1 = supplierservice.add(supplier2);
-		Supplier supplier3 = new Supplier("Chandubatla");
-		supplier1 = supplierservice.add(supplier3);
-		
-	}
 
 	@GetMapping("/profile")
 	public ModelAndView supplierDetails(@RequestParam("id") int id) {
 		Supplier sup = supplierservice.findSupplierById(id);
-		ModelAndView modelAndView = new ModelAndView("details", "supplier", sup);
+		ModelAndView modelAndView = new ModelAndView("supplierdetails", "supplier", sup);
 		return modelAndView;
 	}
 
 	@GetMapping("/listall")
 	public ModelAndView all() {
 		List<Supplier> values = supplierservice.displayAllSuppliers();
-		ModelAndView modelAndView = new ModelAndView("list", "suppliers", values);
+		ModelAndView modelAndView = new ModelAndView("supplierlist", "suppliers", values);
 		return modelAndView;
 	}
+
+	@GetMapping("/supplierregister")
+	public ModelAndView registerSupplier() {
+		ModelAndView modelAndView = new ModelAndView("supplierregister");
+		return modelAndView;
+	}
+
+	@GetMapping("/processregister")
+	public ModelAndView processRegister(@RequestParam("name") String name) {
+		System.out.println("inside processregister method, name=" + name);
+		Supplier supplier = new Supplier(name);
+		supplierservice.add(supplier);
+		ModelAndView modelAndView = new ModelAndView("supplierdetails", "supplier", supplier);
+		return modelAndView;
+	}
+
+	@GetMapping("/login")
+	public ModelAndView login() {
+		ModelAndView modelAndView = new ModelAndView("login");
+		return modelAndView;
+	}
+
+	@GetMapping("/processlogin")
+	public ModelAndView processLogin(@RequestParam("name") String name, @RequestParam("id") int id) {
+		Supplier supplier = supplierservice.findSupplierById(id);
+		ModelAndView modelAndView = new ModelAndView("supplierdetails", "supplier", supplier);
+		return modelAndView;
+	}
+
 }
+
+/*@PostConstruct
+public void init() {
+	Supplier supplier1 = new Supplier("Preethi");
+	supplier1 = supplierservice.add(supplier1);
+	Supplier supplier2 = new Supplier("Sai");
+	supplier1 = supplierservice.add(supplier2);
+	Supplier supplier3 = new Supplier("Chandubatla");
+	supplier1 = supplierservice.add(supplier3);
+
+}*/

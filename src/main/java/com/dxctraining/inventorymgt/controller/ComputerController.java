@@ -17,7 +17,7 @@ import com.dxctraining.inventorymgt.supplier.entities.Supplier;
 import com.dxctraining.inventorymgt.supplier.service.ISupplierService;
 
 @Controller
-public class ComputerController extends Item {
+public class ComputerController{
 	@Autowired
 	private IComputerService computerservice;
 	@Autowired

@@ -10,7 +10,6 @@ import javax.persistence.Table;
 import com.dxctraining.inventorymgt.supplier.entities.Supplier;
 
 
-
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = "items")

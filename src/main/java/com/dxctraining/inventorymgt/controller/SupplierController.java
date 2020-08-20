@@ -18,7 +18,6 @@ public class SupplierController {
 	@Autowired
 	private ISupplierService supplierservice;
 
-
 	@GetMapping("/profile")
 	public ModelAndView supplierDetails(@RequestParam("id") int id) {
 		Supplier sup = supplierservice.findSupplierById(id);

@@ -18,7 +18,6 @@
 
 <c:out value="${supplier.name}"  />
 
-
 <br>
 </c:forEach>
 

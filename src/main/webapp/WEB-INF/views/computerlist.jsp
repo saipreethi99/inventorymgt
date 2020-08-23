@@ -17,8 +17,8 @@
 <c:out value="${computer.id}"  />
 
 <c:out value="${computer.name}"  />
-<c:out value="${computer.diskSize}"  />
 
+<c:out value="${computer.diskSize}"  />
 
 <br>
 </c:forEach>

@@ -17,8 +17,8 @@
 <c:out value="${phone.id}"  />
 
 <c:out value="${phone.name}"  />
-<c:out value="${phone.storageSize}"  />
 
+<c:out value="${phone.storageSize}"  />
 
 <br>
 </c:forEach>

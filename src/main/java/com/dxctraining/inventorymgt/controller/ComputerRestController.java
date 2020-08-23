@@ -39,12 +39,4 @@ public class ComputerRestController {
 		return computerservice1;
 	}
 	
-	/*@PutMapping("/update")
-	@ResponseStatus(HttpStatus.ACCEPTED)
-	public Supplier updateSupplier(@RequestBody UpdateSupplierRequest supplier) {
-		Supplier supplier1 = new Supplier(supplier.getName(),supplier.getPassword());
-		supplier1.setId(supplier.getId());
-		return service.add(supplier1);
-	}*/
-
 }

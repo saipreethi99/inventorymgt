@@ -17,6 +17,17 @@ public class SupplierController {
 
 	@Autowired
 	private ISupplierService supplierservice;
+	
+	@PostConstruct
+	public void init() {
+		Supplier supplier1 = new Supplier("Preethi","12345");
+		supplier1 = supplierservice.add(supplier1);
+		Supplier supplier2 = new Supplier("Sai","12346");
+		supplier1 = supplierservice.add(supplier2);
+		Supplier supplier3 = new Supplier("Chandubatla","12347");
+		supplier1 = supplierservice.add(supplier3);
+
+	}
 
 	@GetMapping("/profile")
 	public ModelAndView supplierDetails(@RequestParam("id") int id) {
@@ -39,9 +50,9 @@ public class SupplierController {
 	}
 
 	@GetMapping("/processregister")
-	public ModelAndView processRegister(@RequestParam("name") String name) {
+	public ModelAndView processRegister(@RequestParam("name") String name,@RequestParam("password") String password) {
 		System.out.println("inside processregister method, name=" + name);
-		Supplier supplier = new Supplier(name);
+		Supplier supplier = new Supplier(name,password);
 		supplierservice.add(supplier);
 		ModelAndView modelAndView = new ModelAndView("supplierdetails", "supplier", supplier);
 		return modelAndView;
@@ -60,15 +71,10 @@ public class SupplierController {
 		return modelAndView;
 	}
 
+	@GetMapping("/logout")
+	public ModelAndView logout() {
+		ModelAndView modelAndView = new ModelAndView("login");
+		return modelAndView;
+	}
 }
 
-/*@PostConstruct
-public void init() {
-	Supplier supplier1 = new Supplier("Preethi");
-	supplier1 = supplierservice.add(supplier1);
-	Supplier supplier2 = new Supplier("Sai");
-	supplier1 = supplierservice.add(supplier2);
-	Supplier supplier3 = new Supplier("Chandubatla");
-	supplier1 = supplierservice.add(supplier3);
-
-}*/

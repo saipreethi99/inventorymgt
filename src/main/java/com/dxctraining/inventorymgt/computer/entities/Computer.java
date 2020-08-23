@@ -19,6 +19,11 @@ public class Computer extends Item {
 		super(name, supplier);
 		this.diskSize = diskSize;
 	}
+	
+	public Computer(String name, int diskSize) {
+		super(name);
+		this.diskSize = diskSize;
+	}
 
 	public Computer() {
 

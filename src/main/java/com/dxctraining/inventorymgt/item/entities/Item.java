@@ -26,6 +26,10 @@ public class Item {
 		this.supplier = supplier;
 	}
 
+	public Item(String name) {
+		this.name = name;
+	}
+	
 	public Item() {
 	}
 

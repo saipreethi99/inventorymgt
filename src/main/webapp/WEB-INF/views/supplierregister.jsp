@@ -21,6 +21,13 @@
 
 </div>
 
+<div>
+
+<label>Password</label>
+<input type="password"  name="password">
+
+</div>
+
 <input type="submit" value="Create Supplier">
 
 </form>

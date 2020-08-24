@@ -58,7 +58,7 @@ public class SupplierController {
 
 	@GetMapping("/processregister")
 	public ModelAndView processRegister(@RequestParam("name") String name, @RequestParam("password") String password) {
-		System.out.println("inside processregister method, name=" + name);
+		System.out.println("inside processregister method, name=" + name+ "password="+password);
 		Supplier supplier = new Supplier(name, password);
 		supplierservice.add(supplier);
 		ModelAndView modelAndView = new ModelAndView("supplierdetails", "supplier", supplier);

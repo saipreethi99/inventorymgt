@@ -29,7 +29,7 @@
 
 </div>
 
-<input type="submit" value="Create Supplier">
+<input type="submit" value="login">
 
 </form>
 

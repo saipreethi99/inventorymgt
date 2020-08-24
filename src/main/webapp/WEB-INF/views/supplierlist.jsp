@@ -21,5 +21,7 @@
 <br>
 </c:forEach>
 
+<a href="/logout"> Log out </a>
+
 </body>
 </html>
